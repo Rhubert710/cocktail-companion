@@ -1,5 +1,8 @@
 import './App.css';
+
+
 import SearchBar from './components/SearchBar';
+import TopDrinks from './components/TopDrinks';
 
 function App() {
   return (
@@ -9,6 +12,7 @@ function App() {
 
       <SearchBar/>
 
+      <TopDrinks/>
 
       
     </div>

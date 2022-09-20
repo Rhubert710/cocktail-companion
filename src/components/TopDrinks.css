@@ -1,0 +1,43 @@
+#bar{
+
+    display: flex;
+    gap: 4px;
+    margin-inline: 40px;
+    height: 400px;
+    overflow-x: scroll;
+    align-items: center;
+    /* position: relative; */
+
+}
+::-webkit-scrollbar {
+    width: 0;  /* Remove scrollbar space */}
+
+.card{
+
+    height: 299px;
+    transition:.2s;
+}
+
+.card:hover{
+
+    transition:.2s;
+    height: 340px;
+
+}
+
+.navButton{
+
+    font-size: 2.6rem;
+    background-color: rgba(219, 219, 219, 0.753);
+    border-radius: 50%;
+    position: absolute;
+    padding-inline: 12px;
+    padding-bottom: 5px;
+    left: 44px;
+    
+
+}
+
+#prevNav{
+    left: -24px;
+}
