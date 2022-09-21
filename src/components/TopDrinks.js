@@ -1058,7 +1058,15 @@ function TopDrinks() {
               }
             ];
 
-console.log(popD);
+        let popQ;
+        const fetchData = (()=> {
+            fetch('./drinks.json')
+            .then((response) => response.json())
+            .then((data) => console.log(data));
+        })
+
+        fetchData();
+        console.log(popQ);
 
   return (
     
@@ -1067,9 +1075,16 @@ console.log(popD);
         <div id='prevNav' className='navButton'>&#60;</div>
 
     {popD.map((drink)=>(
+        <div>
 
-        <img className='card' src={drink.strDrinkThumb} alt="" />
+            <img className='card' src={drink.strDrinkThumb} alt="" />
+
+            <div className='drinkName'>{drink.strDrink}</div>
+
+        </div>
     ))}
+
+    <div id='nextNav' className='navButton'>&#62;</div>
 
     </div>
   )
