@@ -1,6 +1,7 @@
 import React from 'react'
 import './TopDrinks.css';
 
+import {useEffect} from "react";
 function TopDrinks() {
 
     
@@ -617,61 +618,6 @@ function TopDrinks() {
                 "strVideo": null
               },
               {
-                "dateModified": "2017-01-02 20:06:50",
-                "idDrink": "11011",
-                "strAlcoholic": "Alcoholic",
-                "strCategory": "Ordinary Drink",
-                "strCreativeCommonsConfirmed": "No",
-                "strDrink": "After Supper Cocktail",
-                "strDrinkAlternate": null,
-                "strDrinkDE": null,
-                "strDrinkES": null,
-                "strDrinkFR": null,
-                "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/quyxwu1483387610.jpg",
-                "strDrinkZH-HANS": null,
-                "strDrinkZH-HANT": null,
-                "strGlass": "Cocktail glass",
-                "strIBA": null,
-                "strIngredient1": "Triple sec",
-                "strIngredient10": null,
-                "strIngredient11": null,
-                "strIngredient12": null,
-                "strIngredient13": null,
-                "strIngredient14": null,
-                "strIngredient15": null,
-                "strIngredient2": "Apricot brandy",
-                "strIngredient3": "Lemon juice",
-                "strIngredient4": null,
-                "strIngredient5": null,
-                "strIngredient6": null,
-                "strIngredient7": null,
-                "strIngredient8": null,
-                "strIngredient9": null,
-                "strInstructions": "Shake all ingredients with ice, strain into a cocktail glass, and serve.",
-                "strInstructionsDE": "Alle Zutaten mit Eis schütteln, in ein Cocktailglas abseihen und servieren.",
-                "strInstructionsES": null,
-                "strInstructionsFR": null,
-                "strInstructionsZH-HANS": null,
-                "strInstructionsZH-HANT": null,
-                "strMeasure1": "1 oz ",
-                "strMeasure10": null,
-                "strMeasure11": null,
-                "strMeasure12": null,
-                "strMeasure13": null,
-                "strMeasure14": null,
-                "strMeasure15": null,
-                "strMeasure2": "1 oz ",
-                "strMeasure3": "1/2 tsp ",
-                "strMeasure4": null,
-                "strMeasure5": null,
-                "strMeasure6": null,
-                "strMeasure7": null,
-                "strMeasure8": null,
-                "strMeasure9": null,
-                "strTags": null,
-                "strVideo": null
-              },
-              {
                 "dateModified": "2017-01-02 20:07:27",
                 "idDrink": "11012",
                 "strAlcoholic": "Alcoholic",
@@ -835,61 +781,6 @@ function TopDrinks() {
                 "strMeasure9": null,
                 "strTags": "IBA,Classic,Dairy",
                 "strVideo": "https://www.youtube.com/watch?v=qEhRK_v2w2g"
-              },
-              {
-                "dateModified": "2017-01-02 20:09:06",
-                "idDrink": "11016",
-                "strAlcoholic": "Alcoholic",
-                "strCategory": "Ordinary Drink",
-                "strCreativeCommonsConfirmed": "No",
-                "strDrink": "Brandy Alexander",
-                "strDrinkAlternate": null,
-                "strDrinkDE": null,
-                "strDrinkES": null,
-                "strDrinkFR": null,
-                "strDrinkThumb": "https://www.thecocktaildb.com/images/media/drink/tvqxvr1483387746.jpg",
-                "strDrinkZH-HANS": null,
-                "strDrinkZH-HANT": null,
-                "strGlass": "Cocktail glass",
-                "strIBA": null,
-                "strIngredient1": "Brandy",
-                "strIngredient10": null,
-                "strIngredient11": null,
-                "strIngredient12": null,
-                "strIngredient13": null,
-                "strIngredient14": null,
-                "strIngredient15": null,
-                "strIngredient2": "Creme de Cacao",
-                "strIngredient3": "Light cream",
-                "strIngredient4": "Nutmeg",
-                "strIngredient5": null,
-                "strIngredient6": null,
-                "strIngredient7": null,
-                "strIngredient8": null,
-                "strIngredient9": null,
-                "strInstructions": "Shake all ingredients (except nutmeg) with ice and strain contents into a cocktail glass. Sprinkle nutmeg on top and serve.",
-                "strInstructionsDE": "Alle Zutaten (außer Muskatnuss) mit Eis schütteln und in ein Cocktailglas abseihen. Muskatnuss darüber streuen und servieren.",
-                "strInstructionsES": null,
-                "strInstructionsFR": null,
-                "strInstructionsZH-HANS": null,
-                "strInstructionsZH-HANT": null,
-                "strMeasure1": "1 oz ",
-                "strMeasure10": null,
-                "strMeasure11": null,
-                "strMeasure12": null,
-                "strMeasure13": null,
-                "strMeasure14": null,
-                "strMeasure15": null,
-                "strMeasure2": "1 oz white ",
-                "strMeasure3": "1 oz ",
-                "strMeasure4": null,
-                "strMeasure5": null,
-                "strMeasure6": null,
-                "strMeasure7": null,
-                "strMeasure8": null,
-                "strMeasure9": null,
-                "strTags": null,
-                "strVideo": null
               },
               {
                 "dateModified": "2017-01-02 20:10:29",
@@ -1065,28 +956,42 @@ function TopDrinks() {
             .then((data) => console.log(data));
         })
 
-        fetchData();
-        console.log(popQ);
+        // fetchData();
+        // console.log(popQ);
+        
+        function scroll(direction){
+
+            const z = document.querySelector("#bar");
+            (direction=='Right') ? z.scrollLeft += (270) : z.scrollLeft -= (270);
+
+        }
 
   return (
-    
-    <div id='bar'>
+    <div id='topDrinks'>
 
-        <div id='prevNav' className='navButton'>&#60;</div>
+    <div id='outer'>
 
-    {popD.map((drink)=>(
-        <div>
+        <div id='prevNav' className='navButton' onClick={()=>scroll('Left')} >&#60;</div>
 
-            <img className='card' src={drink.strDrinkThumb} alt="" />
+        <div id='bar'>
 
-            <div className='drinkName'>{drink.strDrink}</div>
+            {popD.map((drink)=>(
+                <div className='cardd'>
+
+                    <img className='card' src={drink.strDrinkThumb} alt="" />
+
+                    <div className='drinkName'>{drink.strDrink}</div>
+
+                </div>
+            ))}
 
         </div>
-    ))}
 
-    <div id='nextNav' className='navButton'>&#62;</div>
+        <div id='nextNav' className='navButton' onClick={()=>scroll('Right')} >&#62;</div>
 
     </div>
+</div>
+
   )
 }
 
