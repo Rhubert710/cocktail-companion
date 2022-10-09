@@ -11,6 +11,8 @@ body {
 
   align-items: center;
   /* width: 100vw; */
+
+  /* overflow: scroll; */
 }
 
 code {

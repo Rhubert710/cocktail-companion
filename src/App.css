@@ -9,6 +9,18 @@
   width: 100vw;
   max-width: 1400px;
 
+  height: 100vh;
+  overflow: scroll;
+
+
+}
+
+#drink-list{
+
+  width: 80%;
+
+  display: grid;
+  grid-template-columns: 60% 40%;
 }
 
 .App-logo {
