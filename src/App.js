@@ -1,6 +1,7 @@
 import './App.css';
 import DrinkList from './components/DrinkList';
 import Header from './components/Header';
+import LoginModal from './components/LoginModal';
 
 
 import SearchBar from './components/SearchBar';
@@ -18,9 +19,11 @@ function App() {
 
       <TopDrinks/>
 
+      <LoginModal/>
+
       <DrinkList/>
 
-
+    
 
       
     </div>
