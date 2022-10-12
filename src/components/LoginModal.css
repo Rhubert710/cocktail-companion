@@ -13,7 +13,10 @@
     z-index: 99;
     display: flex;
     flex-direction: column;
-    margin-left: auto;
+    /* padding-left: 51px; */
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
   }
 
 .login-input{
@@ -22,9 +25,11 @@
     font-size: large;
     padding: 8px;
     border-radius: 19px;
+    /* margin-inline: auto; */
+    text-align: center;
 
 }
 
 .login-input-title{
-    margin-left: 4%;
+    /* margin-inline: auto; */
 }
