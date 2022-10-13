@@ -13,6 +13,16 @@ function LoginModal() {
 
   };
 
+  function setUser() {
+
+    if (!document.querySelector('#username_input').value) return
+    if (!document.querySelector('#password_input').value) return
+
+    localStorage.setItem('userName',document.querySelector('#username_input').value)
+    document.querySelector('#login-modal').style['display'] = 'none';
+    
+  }
+
   return (
 
             <div id='login-modal'>
@@ -22,7 +32,7 @@ function LoginModal() {
               <div className='login-input-title'>username:</div>
               <input type="text" id="username_input" className="login-input"/>
               <div className='login-input-title'>password</div>
-              <input type="text" id="password_input" className="login-input"/>
+              <input type="password" id="password_input" className="login-input"/>
 
               <div id='loginType_div'
 
@@ -49,6 +59,7 @@ function LoginModal() {
                   color:'white'
                 }}
 
+                onClick = { ()=> setUser()}
                 
                 >
                   {loginText}
