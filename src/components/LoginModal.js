@@ -16,10 +16,11 @@ function LoginModal() {
   function setUser() {
 
     if (!document.querySelector('#username_input').value) return
-    if (!document.querySelector('#password_input').value) return
 
     localStorage.setItem('userName',document.querySelector('#username_input').value)
     document.querySelector('#login-modal').style['display'] = 'none';
+
+    document.querySelector('#loginText_div').innerHTML = `Logged in as <strong>${document.querySelector('#username_input').value}</strong>`
     
   }
 
@@ -27,7 +28,7 @@ function LoginModal() {
 
             <div id='login-modal'>
 
-              <h1 style={{}}>{loginText}</h1>
+              <h1> {loginText} </h1>
 
               <div className='login-input-title'>username:</div>
               <input type="text" id="username_input" className="login-input"/>
@@ -59,7 +60,7 @@ function LoginModal() {
                   color:'white'
                 }}
 
-                onClick = { ()=> setUser()}
+                onClick = { ()=> setUser() }
                 
                 >
                   {loginText}

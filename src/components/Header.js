@@ -8,11 +8,11 @@ function Header(props) {
 
             <div className='header' style={{width:'99%', display:'flex'}}>
 
-                <div 
+                <div id='loginText_div'
                     style={{margin:'8px', 'marginLeft':'auto', cursor:'pointer'}}
 
                     onClick={() => {
-                        document.querySelector('#loginModal').style.display = 'block'
+                        document.querySelector('#login-modal').style.display = 'flex';
                     
                     }}
                 >

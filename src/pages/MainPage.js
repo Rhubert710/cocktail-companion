@@ -7,7 +7,10 @@ import SearchBar from '../components/SearchBar';
 import TopDrinks from '../components/TopDrinks';
 import { Routes, Route, Link } from "react-router-dom";
 
-function MainPage() {
+function MainPage(props) {
+
+  
+
   return (
     <div className="App">
 
@@ -21,7 +24,7 @@ function MainPage() {
 
       <LoginModal/>
 
-      <DrinkList/>
+      <DrinkList currentDrink = { props.currentDrink }/>
 
     
 

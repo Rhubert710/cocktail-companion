@@ -10,7 +10,9 @@ import DrinkPage from './pages/DrinkPage';
 function App() {
 
   const [user, setUser] = useState();
-  const [currentDrink, setCurrentDrink] = useState();
+
+  // const [currentDrink, setCurrentDrink] = useState('k');
+  let currentDrink = 'p'
 
   return (
     <div className="App">
@@ -18,8 +20,8 @@ function App() {
         <Header user = { user } setUser = { setUser }/>
 
         <Routes>
-          <Route path="/" element={<MainPage user = { user} currentDrink = { currentDrink}/>} setCurrentDrink = { setCurrentDrink }/>
-          <Route path="/drink" element={<DrinkPage user = { user} currentDrink = { currentDrink}/>} />
+          <Route path="/" element={<MainPage user = { user } currentDrink = { currentDrink}/>} />
+          <Route path="/drink" element={<DrinkPage user = { user } />} />
         </Routes>     
 
     </div>

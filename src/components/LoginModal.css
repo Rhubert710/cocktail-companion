@@ -11,7 +11,7 @@
     border: 1px solid black;
     background-color: white;
     z-index: 99;
-    display: flex;
+    display: none; /*flex*/
     flex-direction: column;
     /* padding-left: 51px; */
     align-items: center;

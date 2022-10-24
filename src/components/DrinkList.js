@@ -1,6 +1,7 @@
 import React from 'react'
-// import { useState } from "react";
-// import DrinkListItem from './DrinkListItem';
+import { Routes, Route, Link, Navigate } from "react-router-dom";
+import DrinkPage from '../pages/DrinkPage';
+
 
 
 const allDrinks = [
@@ -2717,9 +2718,14 @@ const allDrinks = [
 ]
 
 
-function DrinkList() {
+function DrinkList({ currentDrink}) {
 
   // const [letter, setLetter] = useState('A');
+
+  function drinkClick(drinkId) {
+    // setCurrentDrink('p')
+    currentDrink = 'k';
+  }
 
   return (
     <div id='drink-list'>
@@ -2727,7 +2733,10 @@ function DrinkList() {
           {allDrinks.map((drink) => {
 
             return(
-            <div className='a-card' style={{display:'flex'}}>
+
+              <Link to= '/drink' drink = 'k'>
+
+            <div className='a-card' style={{display:'flex'}} onClick = {()=>drinkClick(drink.idDrink)}>
 
                 <img className='drink-img' src={drink.strDrinkThumb} alt="drink.strDrink" 
                     style={{width:'19vmin', 'aspectRatio':'1'}}/>
@@ -2735,6 +2744,7 @@ function DrinkList() {
                 <div className='drink-name'>{drink.strDrink}</div>
 
             </div>
+            </Link>
             )
           })
           }
